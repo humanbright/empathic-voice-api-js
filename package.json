@@ -1,0 +1,25 @@
+{
+  "name": "voice-sdk",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "build:packages": "turbo build --filter='./packages/**'",
+    "dev": "turbo dev",
+    "dev:iframe": "turbo run dev --filter='./packages/**' --filter=example-vite-app-embed",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "release": "pnpm build:packages && pnpm publish -r --access restricted --no-git-checks"
+  },
+  "devDependencies": {
+    "@humeai/eslint-config": "workspace:*",
+    "@humeai/typescript-config": "workspace:*",
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
